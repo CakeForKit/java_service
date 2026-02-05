@@ -1,5 +1,5 @@
 package com.example.TestService.services;
-import com.example.TestService.models.UserModel;
+import com.example.TestService.models.User;
 import com.example.TestService.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
@@ -14,7 +14,7 @@ public class CurComsumerUserService implements ComsumerUserService {
 
     @Override
     @CacheEvict(cacheNames="getAllUsers", allEntries=true)
-    public void save(UserModel user) {
+    public void save(User user) {
         userRepo.save(user);
     }
 

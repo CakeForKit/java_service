@@ -1,9 +1,11 @@
 package com.example.TestService.config;
 
 
+import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -18,7 +20,10 @@ import java.util.Map;
 
 @Configuration
 @EnableCaching
+@AllArgsConstructor
 public class CacheConfig {
+    private final Environment env;
+
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
         ClassLoader loader = this.getClass().getClassLoader();
@@ -27,10 +32,9 @@ public class CacheConfig {
 
         Map<String, RedisCacheConfiguration> cacheConfigs = new HashMap<>();
 
-        // TTL для кэша "getAllUsers"
         cacheConfigs.put("getAllUsers",
                 RedisCacheConfiguration.defaultCacheConfig()
-                        .entryTtl(Duration.ofSeconds(20))
+                        .entryTtl(Duration.ofSeconds(env.getProperty("cache.ttl", Long.class, 60L)))
                         .serializeValuesWith(pair));
 
         return RedisCacheManager.builder(connectionFactory)
@@ -38,10 +42,3 @@ public class CacheConfig {
                 .build();
     }
 }
-
-//        RedisCacheConfiguration cfg = RedisCacheConfiguration.defaultCacheConfig()
-//                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(
-//                        new GenericJackson2JsonRedisSerializer()))
-//                .entryTtl(Duration.ofMinutes(10))
-//                .disableCachingNullValues();
-//        return RedisCacheManager.builder(connectionFactory).cacheDefaults(cfg).build();

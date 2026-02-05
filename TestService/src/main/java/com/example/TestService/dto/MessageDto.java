@@ -1,6 +1,6 @@
 package com.example.TestService.dto;
 
-import com.example.TestService.models.UserModel;
+import com.example.TestService.models.User;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,5 +15,5 @@ public class MessageDto {
     private ActionUser action;
 
     @NotNull
-    private UserModel user;
+    private User user;
 }
