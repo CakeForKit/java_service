@@ -1,8 +1,8 @@
-package com.example.TestService.listener;
+package ru.bellintegrator.TestService.listener;
 
-import com.example.TestService.dto.ActionUser;
-import com.example.TestService.dto.MessageDto;
-import com.example.TestService.services.ComsumerUserService;
+import ru.bellintegrator.TestService.dto.ActionUser;
+import ru.bellintegrator.TestService.dto.MessageDto;
+import ru.bellintegrator.TestService.services.ComsumerUserService;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

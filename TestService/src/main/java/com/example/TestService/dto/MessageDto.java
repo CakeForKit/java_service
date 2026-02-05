@@ -1,6 +1,6 @@
-package com.example.TestService.dto;
+package ru.bellintegrator.TestService.dto;
 
-import com.example.TestService.models.User;
+import ru.bellintegrator.TestService.models.User;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;

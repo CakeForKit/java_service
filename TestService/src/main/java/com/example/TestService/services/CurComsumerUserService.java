@@ -1,6 +1,6 @@
-package com.example.TestService.services;
-import com.example.TestService.models.User;
-import com.example.TestService.repositories.UserRepository;
+package ru.bellintegrator.TestService.services;
+import ru.bellintegrator.TestService.models.User;
+import ru.bellintegrator.TestService.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.dao.EmptyResultDataAccessException;

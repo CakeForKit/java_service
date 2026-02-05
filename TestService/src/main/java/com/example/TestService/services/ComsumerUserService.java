@@ -1,6 +1,6 @@
-package com.example.TestService.services;
+package ru.bellintegrator.TestService.services;
 
-import com.example.TestService.models.User;
+import ru.bellintegrator.TestService.models.User;
 
 import java.util.UUID;
 

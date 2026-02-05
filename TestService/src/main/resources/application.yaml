@@ -16,7 +16,7 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "*"
-        spring.json.value.default.type: com.example.TestService.dto.MessageDto
+        spring.json.value.default.type: ru.bellintegrator.TestService.dto.MessageDto
 
       # Producer настройки
     producer:
@@ -39,7 +39,7 @@ spring:
 
   logging:
     level:
-      com.example.TestService: DEBUG
+      ru.bellintegrator.TestService: DEBUG
       org.springframework.boot.logging.LoggingSystem: INFO
       root: INFO
 

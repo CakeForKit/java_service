@@ -1,14 +1,14 @@
-package com.example.TestService.services;
+package ru.bellintegrator.TestService.services;
 
-import com.example.TestService.dto.ActionUser;
-import com.example.TestService.dto.MessageDto;
-import com.example.TestService.dto.UserSearchRequest;
-import com.example.TestService.dto.AddUserRequest;
-import com.example.TestService.mappers.UserMapper;
-import com.example.TestService.messaging.MessagingService;
-import com.example.TestService.models.User;
-import com.example.TestService.repositories.UserRepository;
-import com.example.TestService.dto.UserDto;
+import ru.bellintegrator.TestService.dto.ActionUser;
+import ru.bellintegrator.TestService.dto.MessageDto;
+import ru.bellintegrator.TestService.dto.UserSearchRequest;
+import ru.bellintegrator.TestService.dto.AddUserRequest;
+import ru.bellintegrator.TestService.mappers.UserMapper;
+import ru.bellintegrator.TestService.messaging.MessagingService;
+import ru.bellintegrator.TestService.models.User;
+import ru.bellintegrator.TestService.repositories.UserRepository;
+import ru.bellintegrator.TestService.dto.UserDto;
 import jakarta.persistence.criteria.Predicate;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;

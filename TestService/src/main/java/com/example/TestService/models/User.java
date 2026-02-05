@@ -1,4 +1,4 @@
-package com.example.TestService.models;
+package ru.bellintegrator.TestService.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

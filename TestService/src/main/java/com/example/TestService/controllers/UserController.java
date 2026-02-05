@@ -1,11 +1,11 @@
-package com.example.TestService.controllers;
+package ru.bellintegrator.TestService.controllers;
 
-import com.example.TestService.dto.UserDto;
-import com.example.TestService.dto.UserSearchRequest;
-import com.example.TestService.dto.AddUserRequest;
-import com.example.TestService.mappers.UserMapper;
-import com.example.TestService.models.User;
-import com.example.TestService.services.UserService;
+import ru.bellintegrator.TestService.dto.UserDto;
+import ru.bellintegrator.TestService.dto.UserSearchRequest;
+import ru.bellintegrator.TestService.dto.AddUserRequest;
+import ru.bellintegrator.TestService.mappers.UserMapper;
+import ru.bellintegrator.TestService.models.User;
+import ru.bellintegrator.TestService.services.UserService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

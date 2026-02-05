@@ -1,6 +1,6 @@
-package com.example.TestService.messaging;
+package ru.bellintegrator.TestService.messaging;
 
-import com.example.TestService.dto.MessageDto;
+import ru.bellintegrator.TestService.dto.MessageDto;
 import lombok.AllArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
