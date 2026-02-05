@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: TestService
+
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/testservice_db"
+    username: "uuser"
+    password: "ppassword"
+
+  kafka:
+    bootstrap-servers: "localhost:29092"
+    consumer:
+      group-id: testservice-group  # Укажите явно группу
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.example.TestService.dto.MessageDto
+
+      # Producer настройки
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+    template:
+      default-topic: my.orders.topic
+
+  sql:
+    init:
+      mode: always
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: "1111"
+
+  logging:
+    level:
+      com.example.TestService: DEBUG
+      org.springframework.boot.logging.LoggingSystem: INFO
+      root: INFO
+
+    pattern:
+      console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
