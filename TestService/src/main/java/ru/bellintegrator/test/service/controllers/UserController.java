@@ -1,10 +1,10 @@
-package ru.bellintegrator.test_service.controllers;
+package ru.bellintegrator.test.service.controllers;
 
-import ru.bellintegrator.test_service.dto.UserDto;
-import ru.bellintegrator.test_service.dto.UserSearchRequest;
-import ru.bellintegrator.test_service.dto.AddUserRequest;
-import ru.bellintegrator.test_service.models.User;
-import ru.bellintegrator.test_service.services.UserService;
+import ru.bellintegrator.test.service.dto.UserDto;
+import ru.bellintegrator.test.service.dto.UserSearchRequest;
+import ru.bellintegrator.test.service.dto.AddUserRequest;
+import ru.bellintegrator.test.service.models.User;
+import ru.bellintegrator.test.service.services.UserService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;

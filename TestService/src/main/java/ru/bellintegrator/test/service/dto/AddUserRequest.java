@@ -1,4 +1,4 @@
-package ru.bellintegrator.test_service.dto;
+package ru.bellintegrator.test.service.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

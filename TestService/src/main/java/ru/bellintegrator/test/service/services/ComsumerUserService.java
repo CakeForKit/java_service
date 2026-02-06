@@ -1,6 +1,6 @@
-package ru.bellintegrator.test_service.services;
+package ru.bellintegrator.test.service.services;
 
-import ru.bellintegrator.test_service.models.User;
+import ru.bellintegrator.test.service.models.User;
 
 import java.util.UUID;
 

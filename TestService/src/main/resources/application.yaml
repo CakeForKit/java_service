@@ -1,6 +1,6 @@
 spring:
   application:
-    name: test_service
+    name: test.service
 
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/mydb}
@@ -16,7 +16,7 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "*"
-        spring.json.value.default.type: ru.bellintegrator.test_service.dto.MessageDto
+        spring.json.value.default.type: ru.bellintegrator.test.service.dto.MessageDto
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -38,7 +38,7 @@ spring:
 
   logging:
     level:
-      ru.bellintegrator.test_service: DEBUG
+      ru.bellintegrator.test.service: DEBUG
       org.springframework.boot.logging.LoggingSystem: INFO
       root: INFO
 

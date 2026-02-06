@@ -1,4 +1,4 @@
-package ru.bellintegrator.test_service.dto;
+package ru.bellintegrator.test.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

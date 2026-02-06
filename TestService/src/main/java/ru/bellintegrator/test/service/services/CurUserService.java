@@ -1,14 +1,14 @@
-package ru.bellintegrator.test_service.services;
+package ru.bellintegrator.test.service.services;
 
-import ru.bellintegrator.test_service.dto.ActionUser;
-import ru.bellintegrator.test_service.dto.MessageDto;
-import ru.bellintegrator.test_service.dto.UserSearchRequest;
-import ru.bellintegrator.test_service.dto.AddUserRequest;
-import ru.bellintegrator.test_service.mappers.UserMapper;
-import ru.bellintegrator.test_service.messaging.MessagingService;
-import ru.bellintegrator.test_service.models.User;
-import ru.bellintegrator.test_service.repositories.UserRepository;
-import ru.bellintegrator.test_service.dto.UserDto;
+import ru.bellintegrator.test.service.dto.ActionUser;
+import ru.bellintegrator.test.service.dto.MessageDto;
+import ru.bellintegrator.test.service.dto.UserSearchRequest;
+import ru.bellintegrator.test.service.dto.AddUserRequest;
+import ru.bellintegrator.test.service.mappers.UserMapper;
+import ru.bellintegrator.test.service.messaging.MessagingService;
+import ru.bellintegrator.test.service.models.User;
+import ru.bellintegrator.test.service.repositories.UserRepository;
+import ru.bellintegrator.test.service.dto.UserDto;
 import jakarta.persistence.criteria.Predicate;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;

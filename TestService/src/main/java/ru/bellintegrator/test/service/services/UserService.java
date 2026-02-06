@@ -1,9 +1,9 @@
-package ru.bellintegrator.test_service.services;
+package ru.bellintegrator.test.service.services;
 
-import ru.bellintegrator.test_service.dto.UserDto;
-import ru.bellintegrator.test_service.dto.UserSearchRequest;
-import ru.bellintegrator.test_service.dto.AddUserRequest;
-import ru.bellintegrator.test_service.models.User;
+import ru.bellintegrator.test.service.dto.UserDto;
+import ru.bellintegrator.test.service.dto.UserSearchRequest;
+import ru.bellintegrator.test.service.dto.AddUserRequest;
+import ru.bellintegrator.test.service.models.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

@@ -1,7 +1,7 @@
-package ru.bellintegrator.test_service.mappers;
+package ru.bellintegrator.test.service.mappers;
 
-import ru.bellintegrator.test_service.dto.UserDto;
-import ru.bellintegrator.test_service.models.User;
+import ru.bellintegrator.test.service.dto.UserDto;
+import ru.bellintegrator.test.service.models.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 

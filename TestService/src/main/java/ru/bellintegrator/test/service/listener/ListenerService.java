@@ -1,8 +1,8 @@
-package ru.bellintegrator.test_service.listener;
+package ru.bellintegrator.test.service.listener;
 
-import ru.bellintegrator.test_service.dto.ActionUser;
-import ru.bellintegrator.test_service.dto.MessageDto;
-import ru.bellintegrator.test_service.services.ComsumerUserService;
+import ru.bellintegrator.test.service.dto.ActionUser;
+import ru.bellintegrator.test.service.dto.MessageDto;
+import ru.bellintegrator.test.service.services.ComsumerUserService;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;

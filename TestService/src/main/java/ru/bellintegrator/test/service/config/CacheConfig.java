@@ -1,4 +1,4 @@
-package ru.bellintegrator.test_service.config;
+package ru.bellintegrator.test.service.config;
 
 
 import lombok.AllArgsConstructor;

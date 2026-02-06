@@ -1,4 +1,4 @@
-package ru.bellintegrator.test_service;
+package ru.bellintegrator.test.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

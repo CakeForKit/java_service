@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ru.bellintegrator</groupId>
-	<artifactId>test_service</artifactId>
+	<artifactId>test.service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>test_service</name>
+	<name>test.service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
