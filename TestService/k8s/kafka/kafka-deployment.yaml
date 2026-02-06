@@ -13,9 +13,10 @@ spec:
       labels:
         app: kafka
     spec:
+
       containers:
         - name: kafka
-          image: confluentinc/cp-kafka:6.2.4
+          image: confluentinc/cp-kafka:7.4.0
           ports:
             - containerPort: 9092
             - containerPort: 29092
@@ -30,3 +31,14 @@ spec:
                 - "kafka-topics --bootstrap-server localhost:9092 --list"
             initialDelaySeconds: 30
             periodSeconds: 10
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - sh
+                  - -c
+                  - |
+                    # Graceful shutdown
+                    kill -s TERM 1
+                    # Ждем корректного завершения
+                    sleep 30

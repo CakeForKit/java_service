@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: testservice-app
-          image: your-registry/testservice-app:latest  # Замените на ваш образ
+          image: testservice-testservice_app:latest
           ports:
             - containerPort: 8080
           env:
@@ -25,7 +25,10 @@ spec:
                   name: app-config
                   key: SPRING_PROFILES_ACTIVE
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:postgresql://postgres:5432/testservice_db"
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: SPRING_PROFILES_ACTIVE
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:

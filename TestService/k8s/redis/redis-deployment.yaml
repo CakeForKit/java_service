@@ -18,10 +18,8 @@ spec:
           image: redis:alpine3.20
           ports:
             - containerPort: 6379
-          command:
-            - redis-server
-            - "--requirepass"
-            - "$(REDIS_PASSWORD)"
+          command: ["redis-server"]
+          args: ["--requirepass", "$(REDIS_PASSWORD)"]
           env:
             - name: REDIS_PASSWORD
               valueFrom:

@@ -9,4 +9,4 @@ spec:
   ports:
     - port: 5432
       targetPort: 5432
-  type: ClusterIP
+  type: ClusterIP # один из видов Service, который создаёт виртуальный IP-адрес, доступный только внутри кластера.
