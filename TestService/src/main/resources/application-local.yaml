@@ -1,2 +1,15 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/testservice_db"
+    username: "uuser"
+    password: "ppassword"
+
+  kafka:
+    bootstrap-servers: "localhost:29092"
+
+  data:
+    redis:
+      host: localhost
+
 cache:
   ttl: 30
