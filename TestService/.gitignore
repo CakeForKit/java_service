@@ -1,4 +1,6 @@
+tmp.sql
 k8s/
+k8s
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar

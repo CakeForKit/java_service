@@ -4,21 +4,28 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DialectOverride;
+import org.hibernate.annotations.SQLRestriction;
+import org.hibernate.annotations.Where;
 
 import java.io.Serializable;
 import java.util.UUID;
 
 @Data
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
+@Table(name = "USERS")
+@SQLRestriction("IS_DELETED = false")
 public class User {
     @Id
     @NotNull
     @Column(name = "ID")
+    @GeneratedValue(strategy =  GenerationType.UUID)
     private UUID id;
 
     @NotNull
@@ -37,7 +44,7 @@ public class User {
     @Column(name = "AGE")
     private Integer age;
 
-    @NotNull
     @Column(name = "IS_DELETED")
-    private Boolean isDeleted;
+    @Builder.Default
+    private Boolean isDeleted = false;
 }

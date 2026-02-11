@@ -7,13 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-@RestController
 @EnableCaching
+@RestController
+@SpringBootApplication
 public class Application {
-	static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-	}
+	static void main(String[] args) { SpringApplication.run(Application.class, args); }
 
     @GetMapping("/health")
     public ResponseEntity<String> health() {

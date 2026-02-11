@@ -16,7 +16,7 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "*"
-        spring.json.value.default.type: ru.bellintegrator.test.service.dto.MessageDto
+        spring.json.value.default.type: ru.bellintegrator.test.service.dto.UserEventDto
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -24,11 +24,13 @@ spring:
       properties:
         spring.json.add.type.headers: false
     template:
-      default-topic: my.orders.topic
+      default-topic: user-topic
 
-  sql:
-    init:
-      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: create-drop  # создаёт схему и удаляет её при остановке приложения.
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   data:
     redis:
@@ -36,14 +38,15 @@ spring:
       port: 6379
       password: "1111"
 
-  logging:
-    level:
-      ru.bellintegrator.test.service: DEBUG
-      org.springframework.boot.logging.LoggingSystem: INFO
-      root: INFO
+#  logging:
+#    level:
+##      ru.bellintegrator.test.service: "debug"
+##      org.springframework.web: DEBUG
+#      root: "debug"
+#      org.springframework.web: "debug"
 
-    pattern:
-      console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#    pattern:
+#      console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
 
 cache:
-  ttl: 5184000  # 60*60*60*24 = 5184000 sec
+  ttl: 86400  # 60*60*24 = 86400 sec

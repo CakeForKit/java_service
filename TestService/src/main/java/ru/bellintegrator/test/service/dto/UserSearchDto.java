@@ -5,15 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-public class UserSearchRequest {
+@NoArgsConstructor
+public class UserSearchDto {
     private String firstname;
     private String lastname;
     private Integer age;
-
-    public UserSearchRequest() {
-        firstname = "";
-        lastname = "";
-        age = null;
-    }
 }

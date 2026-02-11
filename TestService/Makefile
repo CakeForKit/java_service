@@ -1,6 +1,5 @@
 
-ID=95da973f-803a-4873-9e9b-8ab2fc584753
-
+ID=ac8af616-ee06-4c70-a4bd-7abd9a840496
 .PHONY: post
 post:
 	curl -X POST http://localhost:8080/user \
@@ -28,7 +27,15 @@ getall:
 	curl -X GET http://localhost:8080/user #?id=550e8400-e29b-41d4-a716-446655440000
 	echo ""
 
+.PHONY: getByID
+getByID:
+	curl -X GET http://localhost:8080/user/$(ID) #?id=550e8400-e29b-41d4-a716-446655440000
+	echo ""
 
+.PHONY: health
+health:
+	curl -X GET http://localhost:8080/health
+	echo ""
 
 
 .PHONY: errpost
