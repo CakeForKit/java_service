@@ -45,7 +45,7 @@ services:
       - "9092:9092"
       - "29092:29092"
     healthcheck:
-      test: ["CMD", "kafka-topics", "--bootstrap-server", "localhost:9092", "--list"]
+      test: ["CMD", "kafka.yaml-topics", "--bootstrap-server", "localhost:9092", "--list"]
       interval: 10s
       timeout: 3s
       retries: 3
@@ -131,7 +131,7 @@ networks:
     name: postgres-testservice-net
   kafka-testservice-net:
     driver: bridge
-    name: kafka-testservice-net
+    name: kafka.yaml-testservice-net
   redis-testservice-net:
     driver: bridge
     name: redis-testservice-net

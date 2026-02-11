@@ -4,7 +4,7 @@ metadata:
   name: app-config
   namespace: testservice
 data:
-  KAFKA_BOOTSTRAP_SERVERS: "testservice-kafka:9092"
-  REDIS_HOST: "testservice-redis"
+  KAFKA_BOOTSTRAP_SERVERS: "kafka-service:9092"
+  REDIS_HOST: "redis"
   SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/testservice_db"
   POSTGRES_DB: "testservice_db"
