@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: test-service
+
+  cloud:
+    bootstrap:
+      enabled: true
+    kubernetes:
+      config:
+        enabled: true
+        name: test-service
+        namespace: testservice

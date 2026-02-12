@@ -1,10 +1,20 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: app-config
+  name: test-service
   namespace: testservice
 data:
-  KAFKA_BOOTSTRAP_SERVERS: "kafka-service:9092"
-  REDIS_HOST: "redis"
-  SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/testservice_db"
-  POSTGRES_DB: "testservice_db"
+  application.yaml: |-
+    spring:
+      datasource:
+        url: "jdbc:postgresql://postgres:5432/testservice_db"
+        username: ${PG_USERNAME}  # Теперь это подставится из env
+        password: ${PG_PASSWORD}
+
+# ${PG_USERNAME}
+# ${PG_PASSWORD}
+
+#  KAFKA_BOOTSTRAP_SERVERS: "kafka-service:9092"
+#  REDIS_HOST: "redis"
+#  SPRING_DATASOURCE_URL: "jdbc:postgresql://postgres:5432/testservice_db"
+#  POSTGRES_DB: "testservice_db"

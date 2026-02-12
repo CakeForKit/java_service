@@ -1,8 +1,14 @@
 spring:
   application:
-    name: test-service
+    name: test.service
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/mydb}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:password}
 
   kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
     consumer:
       group-id: testservice-group
       auto-offset-reset: earliest
@@ -28,6 +34,7 @@ spring:
 
   data:
     redis:
+      host: ${REDIS_HOST:localhost}
       port: 6379
       password: "1111"
 cache:
