@@ -5,24 +5,6 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-#  kafka:
-#    consumer:
-#      group-id: testservice-group
-#      auto-offset-reset: earliest
-#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-#      properties:
-#        spring.json.trusted.packages: "*"
-#        spring.json.value.default.type: ru.bellintegrator.test.service.dto.UserEventDto
-
-#    producer:
-#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-#      properties:
-#        spring.json.add.type.headers: false
-#    template:
-#      default-topic: user-topic
-
   jpa:
     hibernate:
       ddl-auto: create-drop  # создаёт схему и удаляет её при остановке приложения.

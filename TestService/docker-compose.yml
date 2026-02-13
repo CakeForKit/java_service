@@ -11,7 +11,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://testservice_postgres:5432/testservice_db
       SPRING_DATASOURCE_USERNAME: uuser
       SPRING_DATASOURCE_PASSWORD: ppassword
-      KAFKA_BOOTSTRAP_SERVERS: testservice_kafka:9092
+      KAFKA_BOOTSTRAP_SERVERS: testservice_kafka:29092
       REDIS_HOST: testservice_redis
     depends_on:
       testservice_postgres:

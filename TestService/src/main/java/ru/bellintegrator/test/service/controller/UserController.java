@@ -1,10 +1,6 @@
 package ru.bellintegrator.test.service.controller;
 
-import ch.qos.logback.classic.Logger;
-import ch.qos.logback.classic.spi.ILoggingEvent;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.LoggerFactory;
-import ru.bellintegrator.test.service.appender.MyAppender;
 import ru.bellintegrator.test.service.dto.UserDto;
 import ru.bellintegrator.test.service.dto.UserSearchDto;
 import ru.bellintegrator.test.service.dto.CreateUserDto;
@@ -18,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.bellintegrator.test.service.service.UserService;
 
-import java.util.Map;
 import java.util.UUID;
 
 @Slf4j

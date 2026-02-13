@@ -12,11 +12,9 @@
 
     <logger name="ru.bellintegrator.test.service" level="DEBUG" additivity="false">
         <appender-ref ref="CONSOLE"/>
-<!--        <appender-ref ref="MY_APPENDER"/>-->
     </logger>
     <logger name="org.springframework" level="WARN" />
     <root level="info">
         <appender-ref ref="CONSOLE" />
-<!--        <appender-ref ref="MY_APPENDER"/>-->
     </root>
 </configuration>

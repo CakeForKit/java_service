@@ -7,10 +7,10 @@ data:
   application.yaml: |-
     spring:
       datasource:
-        url: "jdbc:postgresql://postgres:5432/testservice_db"
         username: ${PG_USERNAME}  # Теперь это подставится из env
         password: ${PG_PASSWORD}
 
+#        url: "jdbc:postgresql://postgres:5432/testservice_db"
 # ${PG_USERNAME}
 # ${PG_PASSWORD}
 

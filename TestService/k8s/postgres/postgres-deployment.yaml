@@ -22,20 +22,17 @@ spec:
             - containerPort: 5432
           env:
             - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: POSTGRES_DB
+              value: "testservice_db"
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
                   name: db-secret
-                  key: username
+                  key: PG_USERNAME
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: db-secret
-                  key: password
+                  key: PG_PASSWORD
           volumeMounts:
             - name: postgres-storage
               mountPath: /var/lib/postgresql/data

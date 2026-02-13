@@ -27,7 +27,6 @@ public class KafkaConsumerConfig {
 
     @Bean
     public ConsumerFactory<String, UserEventDto> userEventConsumerFactory() {
-        System.out.println("========== userEventConsumerFactory ============\n\n");
         Map<String, Object> props = new HashMap<>();
 
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
@@ -39,17 +38,14 @@ public class KafkaConsumerConfig {
         props.put(JsonDeserializer.VALUE_DEFAULT_TYPE, defaultType);
         props.put(JsonDeserializer.USE_TYPE_INFO_HEADERS, false);
 
-        System.out.println("========== out userEventConsumerFactory ============\n\n");
         return new DefaultKafkaConsumerFactory<>(props);
     }
 
     @Bean(name = "userEventKafkaListenerContainerFactory")
     public ConcurrentKafkaListenerContainerFactory<String, UserEventDto> userEventKafkaListenerContainerFactory() {
-        System.out.println("========== userEventKafkaListenerContainerFactory ============\n\n");
         ConcurrentKafkaListenerContainerFactory<String, UserEventDto> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(userEventConsumerFactory());
-        System.out.println("========== out userEventKafkaListenerContainerFactory ============\n\n");
         return factory;
     }
 }
