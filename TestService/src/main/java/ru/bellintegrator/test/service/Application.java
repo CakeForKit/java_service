@@ -12,9 +12,4 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class Application {
 	static void main(String[] args) { SpringApplication.run(Application.class, args); }
-
-    @GetMapping("/health")
-    public ResponseEntity<String> health() {
-        return ResponseEntity.ok("healthy");
-    }
 }

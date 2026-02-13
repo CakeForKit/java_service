@@ -1,6 +1,6 @@
-package ru.bellintegrator.test.service.repositories;
+package ru.bellintegrator.test.service.repository;
 
-import ru.bellintegrator.test.service.models.User;
+import ru.bellintegrator.test.service.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.util.UUID;

@@ -5,7 +5,13 @@ spring:
     password: "ppassword"
 
   kafka:
-    bootstrap-servers: "localhost:29092"
+    bootstrap-servers: "localhost:9092"
+    admin:
+      properties:
+        bootstrap.servers: localhost:9092
+        client.id: test-service-admin
+        request.timeout.ms: 5000
+        connection.timeout.ms: 3000
 
   data:
     redis:

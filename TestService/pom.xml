@@ -100,6 +100,34 @@
             <artifactId>spring-cloud-starter-kubernetes-client-config</artifactId>
             <version>3.3.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>3.5.8</version>
+        </dependency>
+
+
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>jcl-over-slf4j</artifactId>-->
+<!--&lt;!&ndash;            <version>1.7.12</version>&ndash;&gt;-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Source: https://mvnrepository.com/artifact/com.github.danielwegener/logback-kafka-appender &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.danielwegener</groupId>-->
+<!--            <artifactId>logback-kafka-appender</artifactId>-->
+<!--            <version>0.2.0-RC2</version>-->
+<!--&lt;!&ndash;            <scope>compile</scope>&ndash;&gt;-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>ch.qos.logback</groupId>-->
+<!--            <artifactId>logback-classic</artifactId>-->
+<!--&lt;!&ndash;            <version>1.2.3</version>&ndash;&gt;-->
+<!--&lt;!&ndash;            <scope>runtime</scope>&ndash;&gt;-->
+<!--        </dependency>-->
+
     </dependencies>
 
 	<build>

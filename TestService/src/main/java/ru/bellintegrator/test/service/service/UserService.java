@@ -1,4 +1,4 @@
-package ru.bellintegrator.test.service.services;
+package ru.bellintegrator.test.service.service;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -7,12 +7,13 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.transaction.annotation.Transactional;
 import ru.bellintegrator.test.service.dto.ActionUser;
+import org.springframework.beans.factory.annotation.Qualifier;
 import ru.bellintegrator.test.service.dto.UserEventDto;
 import ru.bellintegrator.test.service.dto.UserSearchDto;
 import ru.bellintegrator.test.service.dto.CreateUserDto;
-import ru.bellintegrator.test.service.mappers.UserMapper;
-import ru.bellintegrator.test.service.models.User;
-import ru.bellintegrator.test.service.repositories.UserRepository;
+import ru.bellintegrator.test.service.mapper.UserMapper;
+import ru.bellintegrator.test.service.model.User;
+import ru.bellintegrator.test.service.repository.UserRepository;
 import ru.bellintegrator.test.service.dto.UserDto;
 import jakarta.persistence.criteria.Predicate;
 import lombok.AllArgsConstructor;
@@ -28,9 +29,11 @@ import java.util.List;
 @Slf4j
 @Service
 @AllArgsConstructor
+@Qualifier("userEventKafkaTemplate")
 public class UserService {
     private final UserMapper mapper;
     private final UserRepository repository;
+
     private KafkaTemplate<String, UserEventDto> mbTemplate;
 
     @PostConstruct

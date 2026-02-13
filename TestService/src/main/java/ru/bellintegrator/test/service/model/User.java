@@ -1,4 +1,4 @@
-package ru.bellintegrator.test.service.models;
+package ru.bellintegrator.test.service.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -7,11 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.DialectOverride;
 import org.hibernate.annotations.SQLRestriction;
-import org.hibernate.annotations.Where;
 
-import java.io.Serializable;
 import java.util.UUID;
 
 @Data
@@ -19,7 +16,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "USERS")
+@Table(name = "\"USER\"")
 @SQLRestriction("IS_DELETED = false")
 public class User {
     @Id

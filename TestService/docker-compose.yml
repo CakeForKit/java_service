@@ -7,6 +7,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     environment:
+      SPRING_PROFILES_ACTIVE: dc
       SPRING_DATASOURCE_URL: jdbc:postgresql://testservice_postgres:5432/testservice_db
       SPRING_DATASOURCE_USERNAME: uuser
       SPRING_DATASOURCE_PASSWORD: ppassword
@@ -45,7 +46,7 @@ services:
       - "9092:9092"
       - "29092:29092"
     healthcheck:
-      test: ["CMD", "kafka.yaml-topics", "--bootstrap-server", "localhost:9092", "--list"]
+      test: ["CMD", "kafka-topics", "--bootstrap-server", "localhost:9092", "--list"]
       interval: 10s
       timeout: 3s
       retries: 3
@@ -62,11 +63,17 @@ services:
 
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
 
-      KAFKA_LISTENERS: INTERNAL://:9092,EXTERNAL://:29092
-      KAFKA_ADVERTISED_LISTENERS: INTERNAL://testservice_kafka:9092,EXTERNAL://localhost:29092  # куда Kafka будет "перенаправлять" клиента после того, Как тот подключится к ней.
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT               # Настраиваем шифрование В нашем случае PLAINTEXT означает его отсутствие
-      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL  # Указываем, что для брокеров используется "Слушатель" INTERNAL
+      KAFKA_LISTENERS: DOCKER://0.0.0.0:29092, HOST://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: DOCKER://testservice_kafka:29092, HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: DOCKER:PLAINTEXT,HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
+#      KAFKA_LISTENERS: INTERNAL://:9092,EXTERNAL://:29092
+#      KAFKA_ADVERTISED_LISTENERS: INTERNAL://testservice_kafka:9092,EXTERNAL://localhost:29092  # куда Kafka будет "перенаправлять" клиента после того, Как тот подключится к ней.
+#      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT               # Настраиваем шифрование В нашем случае PLAINTEXT означает его отсутствие
+#      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL  # Указываем, что для брокеров используется "Слушатель" INTERNAL
       CLUSTER_ID: ZETVJENWRjaECDUEExP_eg        # Уникальный ID кластера в формате UUID
+
+      KAFKA_CREATE_TOPICS: "log-topic:1:1,user-topic:1:1"
     networks:
       - kafka-testservice-net
 
@@ -74,10 +81,10 @@ services:
     container_name: testservice_kafka_ui
     image: provectuslabs/kafka-ui:latest
     ports:
-      - "8081:8080"
+      - "8082:8080"
     environment:
       KAFKA_CLUSTERS_0_NAME: local
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: testservice_kafka:9092
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: testservice_kafka:29092
       DYNAMIC_CONFIG_ENABLED: "true"
     depends_on:
       - testservice_kafka
@@ -131,7 +138,7 @@ networks:
     name: postgres-testservice-net
   kafka-testservice-net:
     driver: bridge
-    name: kafka.yaml-testservice-net
+    name: kafka-testservice-net
   redis-testservice-net:
     driver: bridge
     name: redis-testservice-net

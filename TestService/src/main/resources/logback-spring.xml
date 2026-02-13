@@ -6,9 +6,17 @@
         <encoder> <pattern>${CONSOLE_LOG_PATTERN}</pattern> </encoder>
     </appender>
 
+    <springProperty scope="context" name="KAFKA_BOOTSTRAP_SERVERS" source="spring.kafka.bootstrap-servers"/>
+    <springProperty scope="context" name="KAFKA_LOG_TOPIC" source="app.kafka.log-topic"/>
+
+
     <logger name="ru.bellintegrator.test.service" level="DEBUG" additivity="false">
         <appender-ref ref="CONSOLE"/>
+<!--        <appender-ref ref="MY_APPENDER"/>-->
     </logger>
     <logger name="org.springframework" level="WARN" />
-    <root level="info"> <appender-ref ref="CONSOLE" /> </root>]
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+<!--        <appender-ref ref="MY_APPENDER"/>-->
+    </root>
 </configuration>
